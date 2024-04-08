@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Portfolio
+  body
+    h1 Portfolio
+    img(src=user[0].image_url, alt='User Image')
+    p Nombre: #{user[0].name} #{user[0].last_name}
+    p Experiencia Laboral: #{user[0].experience_summary}
+    h2 Tweets
+    each tweet in tweets
+      p= tweet.text
