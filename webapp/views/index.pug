@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Zemoga Portfolios
+  body
+    h1 Zemoga Portfolios
+    p Actual Date is #{actualDate}
+    ul
+      each portfolio in portfolios
+        li
+          a(href=`/portfolio/${portfolio.id_user_portfolio}`) #{portfolio.full_name}
