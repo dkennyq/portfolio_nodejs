@@ -1,6 +1,10 @@
 # Portfolio Node.js Application
 
 This is a Node.js application developed as a part of a test for Zemoga. It allows users to view and edit their portfolios.
+this app use AWS DynamoDB to get the list of the user portfolios in the index page and the portfolio details page.
+The edit form and the save process use AWS ApiGateWay with AWS Lambda as serverless backend.
+
+![alt text](image.png)
 
 ## Installation
 
