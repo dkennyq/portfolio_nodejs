@@ -3,11 +3,6 @@ const AWS = require('aws-sdk');
 class ZemDBReader {
     constructor() {
         this.tableName = 'zem_user_portfolio';
-        this.docClient = new AWS.DynamoDB.DocumentClient({
-            accessKeyId: 'AKIA5FTY7C2T5SGVMJ76',
-            secretAccessKey: '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',
-            region: 'us-east-2'
-        });
     }
 
     getPortfolioById(id_user_portfolio) {
