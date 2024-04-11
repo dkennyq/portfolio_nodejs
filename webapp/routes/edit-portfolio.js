@@ -1,7 +1,7 @@
 //portfolio
 const express = require('express');
 const router = express.Router();
-const ZemgDBReader = require('../public/javascripts/aws_dynamodb_util');
+const ZemgDBReader = require('../services/aws_dynamodb_util');
 
 // router.
 router.get('/edit-portfolio', (req, res) => {

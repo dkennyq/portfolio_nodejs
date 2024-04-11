@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var ZemDBReader = require('../public/javascripts/aws_dynamodb_util'); // adjust the path as needed
+var ZemDBReader = require('../services/aws_dynamodb_util'); // adjust the path as needed
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
