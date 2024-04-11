@@ -26,7 +26,7 @@ router.get('/portfolio/:id', (req, res) => {
   
   var dbReader = new ZemgDBReader();
   console.log(idportfolio);
-  dbReader.readTable(idportfolio)
+  dbReader.getPortfolioById(idportfolio)
     .then((data) => {
         // Access the items from the result
         var user = data.Items[0];

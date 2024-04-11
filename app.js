@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var portfolioRouter = require('./routes/portfolio');
+var editPortfolioRouter = require('./routes/edit-portfolio');
 // app.js
 var historyRouter = require('./routes/history'); // adjust the path as needed
 
@@ -15,6 +16,7 @@ var historyRouter = require('./routes/history'); // adjust the path as needed
 var app = express();
 app.use('/', historyRouter);
 app.use('/', portfolioRouter);
+app.use('/', editPortfolioRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,5 +46,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
