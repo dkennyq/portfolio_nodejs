@@ -14,6 +14,7 @@ var historyRouter = require('./routes/history'); // adjust the path as needed
 // ...
 
 var app = express();
+app.use(express.urlencoded({ extended: true }));
 app.use('/', historyRouter);
 app.use('/', portfolioRouter);
 app.use('/', editPortfolioRouter);

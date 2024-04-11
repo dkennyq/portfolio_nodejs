@@ -10,36 +10,40 @@ html
         }
   body
     div.container
-      h1.text-center Edit #{user ? user.full_name : 'User not found'}'s Portfolio
-      form(action=`/edit-portfolio/${user.id_user_portfolio}`, method='POST')
+      h1.text-center Edit #{user ? user.fullName : 'User not found'}'s Portfolio
+      form(action=`/edit-portfolio/${user.idUserPortfolio}`, method='POST')
         div.form-group
-          label(for='full_name') Full Name
-          input#full_name.form-control(type='text', value=user.full_name, name='full_name')
+          label(for='lastName') Last Name
+          input#lastName.form-control(type='text', value=user.lastName, name='lastName')
         div.form-group
-          label(for='profile_image') Profile Image URL
-          input#profile_image.form-control(type='text', value=user.profile_image, name='profile_image')
-        div.form-group
-          label(for='portfolio_description') Portfolio Description
-          textarea#portfolio_description.form-control(name='portfolio_description')= user.portfolio_description
-        div.form-group
-          label(for='portfolio_summary') Portfolio Summary
-          textarea#portfolio_summary.form-control(name='portfolio_summary')= user.portfolio_summary
-        div.form-group
-          label(for='user_email') Email
-          input#user_email.form-control(type='email', value=user.user_email, name='user_email')
+          label(for='firstName') First Name
+          input#firstName.form-control(type='text', value=user.firstName, name='firstName')
         div.form-group
           label(for='phone') Phone
-          input#phone.form-control(type='tel', value=user.phone, name='phone')
+          input#phone.form-control(type='text', value=user.phone, name='phone')
         div.form-group
-          label(for='x_user_name') X Profile
-          input#x_user_name.form-control(type='text', value=user.x_user_name, name='x_user_name')
+          label(for='userEmail') Email
+          input#userEmail.form-control(type='email', value=user.userEmail, name='userEmail')
         div.form-group
-          label(for='professional_summary') Professional Summary
-          textarea#professional_summary.form-control(style='height: 150px', name='professional_summary')= user.professional_summary
+          label(for='xUserName') X User Name
+          input#xUserName.form-control(type='text', value=user.xUserName, name='xUserName')
+        div.form-group
+          label(for='profileImage') Profile Image
+          input#profileImage.form-control(type='text', value=user.profileImage, name='profileImage')
+        div.form-group
+          label(for='portfolioDescription') Portfolio Description
+          textarea#portfolioDescription.form-control(name='portfolioDescription')= user.portfolioDescription
+        div.form-group
+          label(for='portfolioSummary') Portfolio Summary
+          textarea#portfolioSummary.form-control(name='portfolioSummary')= user.portfolioSummary
+        div.form-group
+          label(for='professionalSummary') Professional Summary
+          textarea#professionalSummary.form-control(style='height: 150px', name='professionalSummary')= user.professionalSummary
         div.text-center.my-4
           button.btn.btn-primary(type='submit') Update Portfolio
           | 
-          a.btn.btn-secondary(href=`/portfolio/${user.id_user_portfolio}`) Cancel
+          a.btn.btn-secondary(href=`/portfolio/${user.idUserPortfolio}`) Cancel
+        input(type='hidden', name='idUserPortfolio', value=user.idUserPortfolio)
     script(src='https://code.jquery.com/jquery-3.7.1.min.js')
     script(src='https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js')
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js", integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct", crossorigin="anonymous")

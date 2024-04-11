@@ -27,7 +27,7 @@ export const handler = async (event, context) => {
           new DeleteCommand({
             TableName: tableName,
             Key: {
-              id_user_portfolio: event.pathParameters.id,
+              id_user_portfolio: parseInt(event.pathParameters.id, 10),
             },
           })
         );
@@ -38,7 +38,7 @@ export const handler = async (event, context) => {
           new GetCommand({
             TableName: tableName,
             Key: {
-              id: event.pathParameters.id,
+              id_user_portfolio: parseInt(event.pathParameters.id, 10),
             },
           })
         );
@@ -56,7 +56,7 @@ export const handler = async (event, context) => {
           new PutCommand({
             TableName: tableName,
             Item: {
-              id_user_portfolio: requestJSON.id,
+              id_user_portfolio: requestJSON.id_user_portfolio,
               full_name: requestJSON.full_name,
               last_name: requestJSON.last_name,
               phone: requestJSON.phone,
@@ -64,11 +64,13 @@ export const handler = async (event, context) => {
               portfolio_summary: requestJSON.portfolio_summary,
               profile_image: requestJSON.profile_image,
               user_email: requestJSON.user_email,
-              x_user_name: requestJSON.x_user_name
+              x_user_name: requestJSON.x_user_name,
+              first_name: requestJSON.first_name,
+              professional_summary: requestJSON.professional_summary
             },
           })
         );
-        body = `Put item ${requestJSON.id}`;
+        body = `Put item ${requestJSON.id_user_portfolio}`;
         break;
       default:
         throw new Error(`Unsupported route: "${event.routeKey}"`);

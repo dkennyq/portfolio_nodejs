@@ -11,7 +11,6 @@ html
       h1.text-center #{user ? user.full_name : 'User not found'}'s Portfolio
       img.rounded-circle.d-block.mx-auto.my-4(src=user.profile_image, alt='Profile Image', style='width: 300px; height: 300px;')
       p.text-center Experience: #{user.portfolio_description}
-      p.text-center Experience: #{user.portfolio_summary}
       h3 Contact Information:
       p.text-left Email: #{user.user_email}
       p.text-lef Phone: #{user.phone}
