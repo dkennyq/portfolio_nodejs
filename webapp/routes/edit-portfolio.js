@@ -10,7 +10,6 @@ router.get('/edit-portfolio', (req, res) => {
 
   router.get('/edit-portfolio/:id', (req, res) => {
     const idportfolio = parseInt(req.params.id, 10);
-    console.log(idportfolio);
     if(!idportfolio) {
       return res.status(400).send('Missing URL parameter portfolio id');
     }
@@ -19,7 +18,6 @@ router.get('/edit-portfolio', (req, res) => {
     portfolio.getPortfolioById(idportfolio)
       .then((userPortfolio) => {
           // Access the items from the result
-          console.log(userPortfolio);
           if (typeof userPortfolio === 'undefined') {
             return res.status(400).send('No data found for the given portfolio id');
           } else {

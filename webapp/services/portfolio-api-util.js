@@ -50,8 +50,6 @@ class PortfolioApiUtil {
             id_user_portfolio: id
           };
 
-          console.log("db", portfolioUserDB);
-
         return fetch(this.baseUrl, {
           method: 'PUT',
           headers: {
